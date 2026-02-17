@@ -1,0 +1,117 @@
+const socialData = {
+  discord: {
+    title: '🎮 Discord Server',
+    description: 'Присоединяйся к моему Discord серверу! Здесь мы общаемся, играем вместе и делимся новостями.',
+    features: [
+      '💬 Активное комьюнити',
+      '🎮 Совместные игры',
+      '📢 Анонсы стримов',
+      '🎁 Розыгрыши и ивенты'
+    ],
+    link: 'https://discord.gg/P49aSDaZ4x',
+    buttonText: 'Присоединиться'
+  },
+  fear: {
+    title: '🌐 Fear Project',
+    description: 'Официальный публичный сервер Fear Project. Присоединяйся к нашему проекту!',
+    features: [
+      '🎯 Уникальный контент',
+      '👥 Дружное сообщество',
+      '🔥 Регулярные обновления',
+      '⚡ Активная поддержка'
+    ],
+    link: 'https://fearproject.ru',
+    buttonText: 'Перейти на сайт'
+  },
+  twitch: {
+    title: '📺 Twitch Channel',
+    description: 'Смотри мои стримы на Twitch! Играю в разные игры, общаюсь с чатом и создаю контент.',
+    features: [
+      '🎮 Разнообразные игры',
+      '💬 Общение с чатом',
+      '🎬 Качественный контент',
+      '⏰ Регулярные стримы'
+    ],
+    link: 'https://www.twitch.tv/santa_game2555',
+    buttonText: 'Смотреть стримы'
+  },
+  'telegram-channel': {
+    title: '📢 Telegram Channel',
+    description: 'Подписывайся на мой Telegram канал для новостей, анонсов и эксклюзивного контента!',
+    features: [
+      '📰 Новости и анонсы',
+      '🎬 Эксклюзивный контент',
+      '⚡ Быстрые обновления',
+      '📸 Фото и видео'
+    ],
+    link: 'https://t.me/santa2555555channal',
+    buttonText: 'Подписаться'
+  },
+  'telegram-contact': {
+    title: '💬 Telegram Contact',
+    description: 'Свяжись со мной напрямую через Telegram для вопросов, предложений или сотрудничества.',
+    features: [
+      '📩 Прямая связь',
+      '🤝 Сотрудничество',
+      '💡 Предложения',
+      '❓ Вопросы и ответы'
+    ],
+    link: 'https://t.me/santa2555555',
+    buttonText: 'Написать'
+  },
+  'discord-bot': {
+    title: '🤖 Мой Discord Бот',
+    description: 'Этот бот находится в разработке. В нём будет множество функционала таких популярных ботов как JuniperBot, Akemi и других!',
+    features: [
+      '🎵 Музыкальный плеер',
+      '🛡️ Модерация сервера',
+      '🎮 Игровые команды',
+      '📊 Статистика и логи',
+      '🎨 Кастомизация',
+      '⚡ Быстрая работа'
+    ],
+    link: '#',
+    buttonText: '⏳ Скоро...'
+  }
+};
+
+const modal = document.getElementById('modal');
+const modalBody = document.getElementById('modal-body');
+const closeBtn = document.querySelector('.close');
+const socialButtons = document.querySelectorAll('[data-social]');
+
+socialButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    e.preventDefault();
+    const socialType = button.getAttribute('data-social');
+    const data = socialData[socialType];
+    
+    const buttonHTML = socialType === 'discord-bot' 
+      ? `<div class="modal-button disabled">${data.buttonText}</div>`
+      : `<a href="${data.link}" target="_blank" rel="noopener noreferrer" class="modal-button">${data.buttonText} →</a>`;
+    
+    modalBody.innerHTML = `
+      <h2>${data.title}</h2>
+      <p class="modal-description">${data.description}</p>
+      <div class="features">
+        ${data.features.map(feature => `<div class="feature-item">${feature}</div>`).join('')}
+      </div>
+      ${buttonHTML}
+    `;
+    
+    modal.style.display = 'flex';
+    setTimeout(() => modal.classList.add('show'), 10);
+  });
+});
+
+closeBtn.addEventListener('click', () => {
+  modal.classList.remove('show');
+  setTimeout(() => modal.style.display = 'none', 300);
+});
+
+window.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.classList.remove('show');
+    setTimeout(() => modal.style.display = 'none', 300);
+  }
+});
