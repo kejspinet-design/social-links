@@ -66,6 +66,7 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
+  width: 100%;
 }
 
 .center-column {
