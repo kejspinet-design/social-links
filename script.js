@@ -149,6 +149,43 @@ const aboutContent = document.getElementById('aboutContent');
 const leftColumn = document.querySelector('.left-column');
 const rightColumn = document.querySelector('.right-column');
 
+// Функция для создания неровной линии
+function createRoughPath() {
+  const roughness = 1.5;
+  const points = [];
+  
+  // Верхняя линия (слева направо)
+  for (let i = 0; i <= 20; i++) {
+    const x = 2 + (i / 20) * 96;
+    const y = 2 + (Math.random() - 0.5) * roughness;
+    points.push(`${i === 0 ? 'M' : 'L'} ${x},${y}`);
+  }
+  
+  // Правая линия (сверху вниз)
+  for (let i = 1; i <= 20; i++) {
+    const x = 98 + (Math.random() - 0.5) * roughness;
+    const y = 2 + (i / 20) * 96;
+    points.push(`L ${x},${y}`);
+  }
+  
+  // Нижняя линия (справа налево)
+  for (let i = 1; i <= 20; i++) {
+    const x = 98 - (i / 20) * 96;
+    const y = 98 + (Math.random() - 0.5) * roughness;
+    points.push(`L ${x},${y}`);
+  }
+  
+  // Левая линия (снизу вверх)
+  for (let i = 1; i <= 20; i++) {
+    const x = 2 + (Math.random() - 0.5) * roughness;
+    const y = 98 - (i / 20) * 96;
+    points.push(`L ${x},${y}`);
+  }
+  
+  points.push('Z');
+  return points.join(' ');
+}
+
 aboutToggle.addEventListener('click', () => {
   const isActive = aboutToggle.classList.contains('active');
   
@@ -158,6 +195,14 @@ aboutToggle.addEventListener('click', () => {
     aboutContent.classList.add('show');
     leftColumn.classList.add('hide');
     rightColumn.classList.add('hide');
+    
+    // Создаем неровную рамку
+    setTimeout(() => {
+      const svg = aboutContent.querySelector('.rough-border path');
+      if (svg) {
+        svg.setAttribute('d', createRoughPath());
+      }
+    }, 600);
   } else {
     // Закрываем "Обо мне" и показываем кнопки
     aboutToggle.classList.remove('active');
