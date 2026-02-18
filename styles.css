@@ -143,9 +143,29 @@ body {
 }
 
 .about-me-content.show {
-  max-height: 600px;
+  max-height: 400px;
   opacity: 1;
-  padding: 40px 50px;
+  padding: 30px 40px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.about-me-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.about-me-content::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+}
+
+.about-me-content::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+}
+
+.about-me-content::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .about-text {
