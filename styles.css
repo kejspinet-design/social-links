@@ -471,7 +471,7 @@ body {
 }
 
 .donation {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
 }
 
 .mod {
@@ -497,6 +497,7 @@ body {
   text-align: center;
   margin-bottom: 10px;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 body {
