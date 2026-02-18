@@ -72,6 +72,32 @@ const socialData = {
     ],
     link: '#',
     buttonText: '⏳ Скоро...'
+  },
+  'donation': {
+    title: '💰 Поддержать донатом',
+    description: 'Хочешь поддержать мой контент? Любой донат помогает развивать канал и создавать больше качественного контента для вас!',
+    features: [
+      '❤️ Поддержка стримера',
+      '🎁 Возможность отправить сообщение',
+      '⭐ Появление в топе донатеров',
+      '🔔 Уведомление на стриме'
+    ],
+    link: 'https://www.donationalerts.com/r/santa_game2555',
+    buttonText: 'Задонатить'
+  },
+  'mod': {
+    title: '🎮 Мод "Новое поколение сюжет"',
+    description: 'Уникальная модификация находится в активной разработке. Следи за обновлениями в моих социальных сетях!',
+    features: [
+      '📖 Новый сюжет',
+      '🎭 Уникальные персонажи',
+      '🌍 Расширенный мир',
+      '🎨 Улучшенная графика',
+      '🎵 Новая музыка',
+      '⚙️ Множество улучшений'
+    ],
+    link: '#',
+    buttonText: '⏳ В разработке...'
   }
 };
 
@@ -86,7 +112,8 @@ socialButtons.forEach(button => {
     const socialType = button.getAttribute('data-social');
     const data = socialData[socialType];
     
-    const buttonHTML = socialType === 'discord-bot' 
+    const isDisabled = socialType === 'discord-bot' || socialType === 'mod';
+    const buttonHTML = isDisabled
       ? `<div class="modal-button disabled">${data.buttonText}</div>`
       : `<a href="${data.link}" target="_blank" rel="noopener noreferrer" class="modal-button">${data.buttonText} →</a>`;
     
