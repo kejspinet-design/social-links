@@ -52,14 +52,14 @@ body {
   align-items: flex-start;
 }
 
-.left-column,
 .right-column {
   display: flex;
   flex-direction: column;
   gap: 12px;
   flex: 1;
   max-width: 400px;
-  align-items: center;
+  align-items: flex-end;
+  margin-left: auto;
 }
 
 .projects-grid {
@@ -506,4 +506,13 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+}
+
+.left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+  max-width: 400px;
+  align-items: center;
 }
