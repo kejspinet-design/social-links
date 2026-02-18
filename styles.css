@@ -81,9 +81,10 @@ body {
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  max-width: 500px;
+  max-width: 900px;
   align-items: center;
   margin-top: -40px;
+  width: 100%;
 }
 
 .about-me-toggle {
@@ -142,9 +143,9 @@ body {
 }
 
 .about-me-content.show {
-  max-height: 1000px;
+  max-height: 500px;
   opacity: 1;
-  padding: 30px 35px;
+  padding: 35px 45px;
 }
 
 .about-text {
