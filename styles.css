@@ -24,13 +24,16 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('background.gif');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #1a1a2e;
-  filter: brightness(0.6);
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+  background-size: 400% 400%;
+  animation: gradientShift 15s ease infinite;
   z-index: -1;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .container {
@@ -55,7 +58,13 @@ body {
   flex-direction: column;
   gap: 12px;
   flex: 1;
-  max-width: 280px;
+  max-width: 400px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
 .center-column {
@@ -246,31 +255,6 @@ body {
   .profile-section {
     margin-bottom: 30px;
   }
-}
-
-.particles {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-  background-image: 
-    radial-gradient(2px 2px at 20% 30%, white, transparent),
-    radial-gradient(2px 2px at 60% 70%, white, transparent),
-    radial-gradient(1px 1px at 50% 50%, white, transparent),
-    radial-gradient(1px 1px at 80% 10%, white, transparent),
-    radial-gradient(2px 2px at 90% 60%, white, transparent),
-    radial-gradient(1px 1px at 33% 80%, white, transparent);
-  background-size: 200% 200%;
-  animation: particles 20s linear infinite;
-  opacity: 0.3;
-}
-
-@keyframes particles {
-  0% { background-position: 0% 0%; }
-  100% { background-position: 100% 100%; }
 }
 
 .stats {
