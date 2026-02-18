@@ -60,6 +60,13 @@ body {
   max-width: 400px;
   align-items: center;
   margin-left: auto;
+  transition: all 0.6s ease;
+}
+
+.right-column.hide {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
 }
 
 .projects-grid {
@@ -79,29 +86,79 @@ body {
   margin-top: -40px;
 }
 
-.about-me {
-  background: rgba(255, 255, 255, 0.05);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 15px;
-  padding: 20px;
+.about-me-toggle {
   width: 100%;
-  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
 
-.about-title {
+.about-toggle-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 15px 30px;
   color: white;
   font-size: 20px;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.about-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.arrow-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.4s ease;
+}
+
+.about-toggle-btn.active .arrow-icon {
+  transform: rotate(180deg);
+}
+
+.about-me-content {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  padding: 0 20px;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.4s ease, padding 0.6s ease;
+}
+
+.about-me-content.show {
+  max-height: 800px;
+  opacity: 1;
+  padding: 20px;
+}
+
 .about-text {
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 15px;
+  line-height: 1.8;
+  text-align: left;
+}
+
+.about-text p {
+  margin-bottom: 12px;
+}
+
+.about-text strong {
+  color: white;
   font-size: 16px;
-  line-height: 1.6;
-  text-align: center;
 }
 
 .button-icon {
@@ -516,4 +573,21 @@ body {
   flex: 1;
   max-width: 400px;
   align-items: center;
+  transition: all 0.6s ease;
+}
+
+.left-column.hide {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
+}
+
+.right-column {
+  transition: all 0.6s ease;
+}
+
+.right-column.hide {
+  opacity: 0;
+  transform: translateY(30px);
+  pointer-events: none;
 }

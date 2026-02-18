@@ -142,3 +142,27 @@ window.addEventListener('click', (e) => {
     setTimeout(() => modal.style.display = 'none', 300);
   }
 });
+
+// About Me Toggle
+const aboutToggle = document.getElementById('aboutToggle');
+const aboutContent = document.getElementById('aboutContent');
+const leftColumn = document.querySelector('.left-column');
+const rightColumn = document.querySelector('.right-column');
+
+aboutToggle.addEventListener('click', () => {
+  const isActive = aboutToggle.classList.contains('active');
+  
+  if (!isActive) {
+    // Открываем "Обо мне" и скрываем кнопки
+    aboutToggle.classList.add('active');
+    aboutContent.classList.add('show');
+    leftColumn.classList.add('hide');
+    rightColumn.classList.add('hide');
+  } else {
+    // Закрываем "Обо мне" и показываем кнопки
+    aboutToggle.classList.remove('active');
+    aboutContent.classList.remove('show');
+    leftColumn.classList.remove('hide');
+    rightColumn.classList.remove('hide');
+  }
+});
