@@ -471,3 +471,15 @@ body {
 .mod {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
+
+.footer {
+  position: fixed;
+  bottom: 15px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 14px;
+  z-index: 10;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
