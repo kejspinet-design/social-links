@@ -81,7 +81,7 @@ body {
   flex-direction: column;
   gap: 20px;
   flex: 1;
-  max-width: 900px;
+  max-width: 1100px;
   align-items: center;
   margin-top: -40px;
   width: 100%;
@@ -143,14 +143,14 @@ body {
 }
 
 .about-me-content.show {
-  max-height: 500px;
+  max-height: 600px;
   opacity: 1;
-  padding: 35px 45px;
+  padding: 40px 50px;
 }
 
 .about-text {
   color: rgba(255, 255, 255, 0.95);
-  font-size: 15px;
+  font-size: 17px;
   line-height: 1.9;
   text-align: left;
 }
@@ -161,7 +161,7 @@ body {
 
 .about-text strong {
   color: white;
-  font-size: 16px;
+  font-size: 18px;
   display: block;
   margin-bottom: 8px;
 }
