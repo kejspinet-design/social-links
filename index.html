@@ -8,6 +8,17 @@
 </head>
 <body>
   <div class="background"></div>
+  
+  <!-- SVG фильтр для неровной рамки -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <filter id="rough-border">
+        <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise"/>
+        <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+      </filter>
+    </defs>
+  </svg>
+  
   <div class="container">
     <div class="layout-wrapper">
       <!-- Левая колонка - Соц сети -->
