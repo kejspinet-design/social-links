@@ -58,7 +58,7 @@ body {
   gap: 12px;
   flex: 1;
   max-width: 400px;
-  align-items: flex-end;
+  align-items: center;
   margin-left: auto;
 }
 
