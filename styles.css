@@ -574,6 +574,58 @@ body {
   background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
 }
 
+.my-websites {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  grid-column: 1 / -1;
+}
+
+.websites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.website-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.website-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 20px 25px;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.website-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+}
+
+.website-name {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.website-arrow {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 24px;
+  transition: transform 0.3s ease;
+}
+
+.website-item:hover .website-arrow {
+  transform: translateX(5px);
+  color: white;
+}
+
 .footer {
   position: fixed;
   bottom: 15px;

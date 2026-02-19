@@ -98,6 +98,19 @@ const socialData = {
     ],
     link: '#',
     buttonText: '⏳ В разработке...'
+  },
+  'my-websites': {
+    title: '🌐 Созданные мною сайты',
+    description: 'Коллекция веб-сайтов, которые я создал. Каждый проект уникален и сделан с душой!',
+    websites: [
+      {
+        name: 'Elfiriya',
+        url: 'https://elfiriya.netlify.app/',
+        description: 'Персональный сайт'
+      }
+    ],
+    link: '#',
+    buttonText: 'Посмотреть сайты'
   }
 };
 
@@ -112,19 +125,39 @@ socialButtons.forEach(button => {
     const socialType = button.getAttribute('data-social');
     const data = socialData[socialType];
     
-    const isDisabled = socialType === 'discord-bot' || socialType === 'mod';
-    const buttonHTML = isDisabled
-      ? `<div class="modal-button disabled">${data.buttonText}</div>`
-      : `<a href="${data.link}" target="_blank" rel="noopener noreferrer" class="modal-button">${data.buttonText} →</a>`;
-    
-    modalBody.innerHTML = `
-      <h2>${data.title}</h2>
-      <p class="modal-description">${data.description}</p>
-      <div class="features">
-        ${data.features.map(feature => `<div class="feature-item">${feature}</div>`).join('')}
-      </div>
-      ${buttonHTML}
-    `;
+    // Специальная обработка для "Созданные мною сайты"
+    if (socialType === 'my-websites') {
+      const websitesHTML = data.websites.map(site => 
+        `<a href="${site.url}" target="_blank" rel="noopener noreferrer" class="website-link">
+          <div class="website-item">
+            <span class="website-name">${site.name}</span>
+            <span class="website-arrow">→</span>
+          </div>
+        </a>`
+      ).join('');
+      
+      modalBody.innerHTML = `
+        <h2>${data.title}</h2>
+        <p class="modal-description">${data.description}</p>
+        <div class="websites-list">
+          ${websitesHTML}
+        </div>
+      `;
+    } else {
+      const isDisabled = socialType === 'discord-bot' || socialType === 'mod';
+      const buttonHTML = isDisabled
+        ? `<div class="modal-button disabled">${data.buttonText}</div>`
+        : `<a href="${data.link}" target="_blank" rel="noopener noreferrer" class="modal-button">${data.buttonText} →</a>`;
+      
+      modalBody.innerHTML = `
+        <h2>${data.title}</h2>
+        <p class="modal-description">${data.description}</p>
+        <div class="features">
+          ${data.features.map(feature => `<div class="feature-item">${feature}</div>`).join('')}
+        </div>
+        ${buttonHTML}
+      `;
+    }
     
     modal.style.display = 'flex';
     setTimeout(() => modal.classList.add('show'), 10);
