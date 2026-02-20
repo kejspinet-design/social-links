@@ -96,8 +96,8 @@ const socialData = {
       '🎵 Новая музыка',
       '⚙️ Множество улучшений'
     ],
-    link: '#',
-    buttonText: '⏳ В разработке...'
+    link: 'https://t.me/NextGenerationStoryMod',
+    buttonText: '📢 Следить за разработкой'
   },
   'my-websites': {
     title: '🌐 Созданные мною сайты',
@@ -144,7 +144,7 @@ socialButtons.forEach(button => {
         </div>
       `;
     } else {
-      const isDisabled = socialType === 'discord-bot' || socialType === 'mod';
+      const isDisabled = socialType === 'discord-bot';
       const buttonHTML = isDisabled
         ? `<div class="modal-button disabled">${data.buttonText}</div>`
         : `<a href="${data.link}" target="_blank" rel="noopener noreferrer" class="modal-button">${data.buttonText} →</a>`;
