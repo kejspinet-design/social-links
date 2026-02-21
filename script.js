@@ -105,7 +105,7 @@ const socialData = {
     websites: [
       {
         name: 'Elfiriya',
-        url: 'https://elfiriya.netlify.app/',
+        url: 'https://elfiriya-site.vercel.app/',
         description: 'Персональный сайт'
       }
     ],
