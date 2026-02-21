@@ -609,6 +609,17 @@ body {
   transform: translateX(5px);
 }
 
+.website-link[href="#"] .website-item {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.website-link[href="#"] .website-item:hover {
+  transform: none;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
 .website-name {
   color: white;
   font-size: 18px;

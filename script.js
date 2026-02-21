@@ -107,6 +107,11 @@ const socialData = {
         name: 'Elfiriya',
         url: 'https://elfiriya-site.vercel.app/',
         description: 'Персональный сайт'
+      },
+      {
+        name: 'Konstanta (скоро)',
+        url: '#',
+        description: 'В разработке'
       }
     ],
     link: '#',
