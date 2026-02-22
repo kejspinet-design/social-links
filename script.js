@@ -109,9 +109,9 @@ const socialData = {
         description: 'Персональный сайт'
       },
       {
-        name: 'Konstanta (скоро)',
-        url: '#',
-        description: 'В разработке'
+        name: 'Konstanta',
+        url: 'https://konstanta-site.vercel.app/',
+        description: 'Сайт проекта'
       }
     ],
     link: '#',
