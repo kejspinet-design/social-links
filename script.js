@@ -191,13 +191,11 @@ aboutToggle.addEventListener('click', () => {
   const isActive = aboutToggle.classList.contains('active');
   
   if (!isActive) {
-    // Открываем "Обо мне" и скрываем кнопки
     aboutToggle.classList.add('active');
     aboutContent.classList.add('show');
     leftColumn.classList.add('hide');
     rightColumn.classList.add('hide');
   } else {
-    // Закрываем "Обо мне" и показываем кнопки
     aboutToggle.classList.remove('active');
     aboutContent.classList.remove('show');
     leftColumn.classList.remove('hide');
