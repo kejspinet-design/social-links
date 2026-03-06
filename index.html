@@ -3,91 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Технические неполадки</title>
+  <title>Santa_Game2555</title>
   <link rel="icon" type="image/jpeg" href="avatar.jpg">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(135deg, #8B0000, #DC143C, #FF0000);
-      background-size: 400% 400%;
-      animation: gradientShift 15s ease infinite;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      overflow: hidden;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    .maintenance-container {
-      text-align: center;
-      padding: 40px;
-      background: rgba(0, 0, 0, 0.3);
-      border-radius: 20px;
-      backdrop-filter: blur(10px);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-      max-width: 600px;
-      animation: fadeIn 1s ease;
-    }
-
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-      animation: pulse 2s ease infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
-    }
-
-    p {
-      font-size: 24px;
-      line-height: 1.6;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .icon {
-      font-size: 80px;
-      margin-bottom: 20px;
-      animation: rotate 3s linear infinite;
-    }
-
-    @keyframes rotate {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
-    }
-  </style>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="maintenance-container">
-    <div class="icon">⚙️</div>
-    <h1>Технические неполадки</h1>
-    <p>Скоро сайт заработает</p>
+  <div class="background"></div>
+  
+  <div class="container">
+    <div class="layout-wrapper">
+      <div class="left-column">
+        <div class="column-title">Мои проекты</div>
+        <a href="#" class="social-button donation" data-social="donation">
+          <img src="donationalerts-Photoroom.png" alt="Donation" class="button-icon">
+          Поддержать донатом
+        </a>
+        <a href="#" class="social-button mod" data-social="mod">
+          <img src="skin-avatar.png" alt="Mod" class="button-icon">
+          Мод "Новое поколение сюжет"
+        </a>
+        <a href="#" class="social-button my-websites" data-social="my-websites">
+          🌐 Созданные мною сайты
+        </a>
+      </div>
+
+      <div class="center-column">
+        <div class="profile-section">
+          <img src="avatar.jpg" alt="Avatar" class="avatar">
+          <div class="username">Santa_Game2555</div>
+          <div class="tagline">Стример | Разработчик | Геймер</div>
+        </div>
+
+        <div class="about-me-toggle">
+          <button class="about-toggle-btn" id="aboutToggle">
+            <span>Обо мне</span>
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </button>
+        </div>
+
+        <div class="about-me-content" id="aboutContent">
+          <div class="about-text">
+            <p><strong>Привет! 👋</strong></p>
+            <p>Я Santa_Game2555 - стример, разработчик и просто человек, который любит создавать что-то новое и интересное.</p>
+            <p><strong>Чем я занимаюсь:</strong></p>
+            <p>🎮 Стримлю различные игры на Twitch<br>
+            💻 Разрабатываю веб-сайты и Discord ботов<br>
+            🎨 Создаю модификации для игр<br>
+            🌐 Развиваю Fear Project</p>
+            <p>Буду рад видеть тебя в моих социальных сетях!</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="right-column">
+        <div class="column-title">Социальные сети</div>
+        <div class="projects-grid">
+          <a href="#" class="social-button discord" data-social="discord">
+            <img src="132197f89853d564c086ef923ad0ed71.gif" alt="Discord" class="button-icon">
+            Discord Server
+          </a>
+          <a href="#" class="social-button fear-project" data-social="fear">
+            <img src="fear.ico" alt="Fear Project" class="button-icon">
+            Fear Project
+          </a>
+          <a href="#" class="social-button twitch" data-social="twitch">
+            <img src="loloshka-icon.jpg" alt="Twitch" class="button-icon">
+            Twitch
+          </a>
+          <a href="#" class="social-button discord-bot" data-social="discord-bot">
+            🤖 Мой Discord Бот
+          </a>
+          <a href="#" class="social-button telegram-channel" data-social="telegram-channel">
+            📢 Telegram Channel
+          </a>
+          <a href="#" class="social-button telegram-contact" data-social="telegram-contact">
+            💬 Telegram Contact
+          </a>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <div id="modal-body"></div>
+    </div>
+  </div>
+
+  <div class="footer">
+    © 2024 Santa_Game2555. Все права защищены.
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
