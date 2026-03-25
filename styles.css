@@ -1,5 +1,5 @@
 :root {
-  --button-width: 320px;
+  --button-width: 280px;
   --button-padding: 18px 25px;
   --button-gap: 20px;
   --button-radius: 10px;
@@ -59,9 +59,10 @@ body {
   display: flex;
   gap: 60px;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   align-items: flex-start;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .left-column {
@@ -89,6 +90,14 @@ body {
   min-width: var(--button-width);
   max-width: var(--button-width);
   justify-self: center;
+}
+
+.left-column .social-button:last-child {
+  grid-column: auto;
+}
+
+.left-column .social-button:nth-last-child(2) {
+  grid-column: auto;
 }
 
 .right-column {
@@ -127,11 +136,7 @@ body {
 }
 
 .right-column .projects-grid .social-button:nth-child(3) {
-  grid-column: auto;
-}
-
-.right-column .projects-grid .social-button:nth-child(4) {
-  grid-column: auto;
+  grid-column: 1 / -1;
 }
 
 .center-column {
@@ -343,26 +348,12 @@ body {
   }
 }
 
-.discord-bot {
-  background: linear-gradient(135deg, #99AAB5, #7289da);
-  cursor: pointer;
-  opacity: 1;
+.youtube {
+  background: linear-gradient(135deg, #FF0000, #CC0000);
 }
 
-.discord-bot:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.4);
-}
-
-.modal-button.disabled {
-  background: linear-gradient(135deg, #99AAB5, #7289da);
-  cursor: not-allowed;
-  opacity: 0.7;
-}
-
-.modal-button.disabled:hover {
-  transform: none;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+.clan {
+  background: linear-gradient(135deg, #7289da, #5865F2);
 }
 
 .username {
@@ -631,6 +622,10 @@ body {
 
 .donation {
   background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+}
+
+.meme-alerts {
+  background: linear-gradient(135deg, #ff8c00, #ff6347);
 }
 
 .mod {
