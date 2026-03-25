@@ -1,5 +1,5 @@
 :root {
-  --button-width: 260px;
+  --button-width: 320px;
   --button-padding: 18px 25px;
   --button-gap: 20px;
   --button-radius: 10px;
@@ -69,7 +69,7 @@ body {
   grid-template-columns: 1fr 1fr;
   gap: 15px;
   flex: 1;
-  max-width: 650px;
+  max-width: 700px;
   align-items: start;
   transition: all 0.6s ease;
 }
@@ -85,22 +85,24 @@ body {
 }
 
 .left-column .social-button {
-  width: 100%;
-  min-width: 260px;
+  width: var(--button-width);
+  min-width: var(--button-width);
+  max-width: var(--button-width);
+  justify-self: center;
 }
 
 .right-column {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 15px;
   flex: 1;
-  max-width: 650px;
-  align-items: start;
+  max-width: 700px;
+  align-items: center;
   transition: all 0.6s ease;
 }
 
 .right-column .column-title {
-  grid-column: 1 / -1;
+  width: 100%;
 }
 
 .right-column.hide {
@@ -109,15 +111,27 @@ body {
   pointer-events: none;
 }
 
-.right-column .social-button {
+.right-column .projects-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
   width: 100%;
-  min-width: 260px;
+  max-width: 680px;
 }
 
-.right-column .social-button:last-child {
-  grid-column: 1 / -1;
+.right-column .social-button {
+  width: var(--button-width);
+  min-width: var(--button-width);
+  max-width: var(--button-width);
   justify-self: center;
-  max-width: 260px;
+}
+
+.right-column .projects-grid .social-button:nth-child(3) {
+  grid-column: auto;
+}
+
+.right-column .projects-grid .social-button:nth-child(4) {
+  grid-column: auto;
 }
 
 .center-column {
@@ -245,6 +259,10 @@ body {
   height: 24px;
   margin-right: 10px;
   font-size: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .button-icon.fa-brands {
@@ -257,6 +275,8 @@ body {
   justify-content: center;
   border: 2px solid rgba(255, 255, 255, 0.3);
   width: var(--button-width);
+  min-width: var(--button-width);
+  max-width: var(--button-width);
   padding: var(--button-padding);
   text-align: center;
   text-decoration: none;
@@ -619,7 +639,53 @@ body {
 
 .my-websites {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  grid-column: 1 / -1;
+}
+
+.price-list {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.price-item {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s;
+}
+
+.price-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(3px);
+}
+
+.price-item-title {
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.price-item-cost {
+  color: #4ade80;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.price-note {
+  background: rgba(255, 200, 0, 0.2);
+  border: 2px solid rgba(255, 200, 0, 0.5);
+  border-radius: 10px;
+  padding: 12px 15px;
+  margin: 20px 0;
+  color: #ffd700;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.price-contact {
+  margin-top: 20px;
 }
 
 .websites-list {
@@ -702,3 +768,166 @@ body {
 }
 
 
+
+/* Admin Panel Styles */
+.admin-modal .admin-content {
+  max-width: 700px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.admin-login {
+  text-align: center;
+  padding: 20px;
+}
+
+.admin-login h2 {
+  color: white;
+  font-size: 32px;
+  margin-bottom: 15px;
+}
+
+.admin-description {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+}
+
+.admin-input {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.admin-input:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.admin-textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+  font-family: 'Arial', sans-serif;
+  resize: vertical;
+  transition: all 0.3s;
+}
+
+.admin-textarea:focus {
+  outline: none;
+  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.admin-btn {
+  padding: 12px 25px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin: 5px;
+}
+
+.admin-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+}
+
+.admin-panel h2 {
+  color: white;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.admin-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-section h3 {
+  color: white;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.admin-section label {
+  display: block;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
+
+.admin-actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.reset-btn {
+  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.logout-btn {
+  background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.avatar {
+  cursor: pointer;
+  user-select: none;
+}
+
+.close-admin {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 32px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.close-admin:hover {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .admin-modal .admin-content {
+    max-width: 95%;
+    padding: 30px 20px;
+  }
+  
+  .admin-actions {
+    flex-direction: column;
+  }
+  
+  .admin-btn {
+    width: 100%;
+  }
+}

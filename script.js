@@ -99,6 +99,27 @@ const socialData = {
     link: 'https://t.me/NextGenerationStoryMod',
     buttonText: '📢 Следить за разработкой'
   },
+  'price-list': {
+    title: '💰 Прайс-лист услуг',
+    description: 'Актуальные цены на мои услуги по разработке и настройке.',
+    prices: [
+      {
+        service: 'Создание Discord сервера',
+        cost: '200 рублей'
+      },
+      {
+        service: 'Создание самописного бота Discord/Telegram + хостинг',
+        cost: '500 рублей'
+      },
+      {
+        service: 'Создание сайта',
+        cost: 'от 500 рублей'
+      }
+    ],
+    note: '⚠️ Цены могут меняться!',
+    link: 'https://t.me/santa2555555',
+    buttonText: 'Связаться'
+  },
   'my-websites': {
     title: '🌐 Созданные мною сайты',
     description: 'Коллекция веб-сайтов, которые я создал. Каждый проект уникален и сделан с душой!',
@@ -130,8 +151,25 @@ socialButtons.forEach(button => {
     const socialType = button.getAttribute('data-social');
     const data = socialData[socialType];
     
+    // Специальная обработка для "Прайс-лист"
+    if (socialType === 'price-list') {
+      const pricesHTML = data.prices.map(item => 
+        `<div class="price-item">
+          <div class="price-item-title">${item.service}</div>
+          <div class="price-item-cost">${item.cost}</div>
+        </div>`
+      ).join('');
+      
+      modalBody.innerHTML = `
+        <h2>${data.title}</h2>
+        <p class="modal-description">${data.description}</p>
+        ${pricesHTML}
+        <div class="price-note">${data.note}</div>
+        <a href="${data.link}" target="_blank" rel="noopener noreferrer" class="modal-button price-contact">${data.buttonText} →</a>
+      `;
+    }
     // Специальная обработка для "Созданные мною сайты"
-    if (socialType === 'my-websites') {
+    else if (socialType === 'my-websites') {
       const websitesHTML = data.websites.map(site => 
         `<a href="${site.url}" target="_blank" rel="noopener noreferrer" class="website-link">
           <div class="website-item">
