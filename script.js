@@ -107,7 +107,7 @@ const socialData = {
       },
       {
         service: 'Создание самописного бота Discord/Telegram + хостинг',
-        cost: '500 рублей'
+        cost: 'от 500 рублей'
       },
       {
         service: 'Создание сайта',
