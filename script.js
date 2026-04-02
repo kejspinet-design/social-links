@@ -131,19 +131,14 @@ const socialData = {
     buttonText: 'Отправить мем'
   },
   'my-websites': {
-    title: '🌐 Созданные мною сайты',
-    description: 'Коллекция веб-сайтов, которые я создал. Каждый проект уникален и сделан с душой!',
+    title: '🌐 Мой проекты',
+    description: 'Мой проекты. Каждый проект уникален и сделан с душой!',
     websites: [
       {
-        name: 'Elfiriya',
-        url: 'https://elfiriya-site.vercel.app/',
+        name: 'Сайт',
+        url: 'https://santa2555555-portfolio.vercel.app/',
         description: 'Персональный сайт'
-      },
-      {
-        name: 'Konstanta',
-        url: 'https://konstanta-site.vercel.app/',
-        description: 'Сайт проекта'
-      }
+      },  
     ],
     link: '#',
     buttonText: 'Посмотреть сайты'
